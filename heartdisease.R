@@ -13,7 +13,6 @@ dim(data)
 #view amount of people by race
 groups <- data %>% group_by(Race) %>% summarise(count = n())
 
-#change heard disease y/n to 1/0
 # data$HeartDisease <- ifelse(data$HeartDisease == "Yes", 1, 0)
 data$HeartDisease <- as.factor(data$HeartDisease)
 
