@@ -7,9 +7,6 @@ getwd()
 setwd("/Users/shriya/Desktop/data_mining")
 data <- read.csv("heart_2020_cleaned.csv")
 
-# of rows and columns
-dim(data)
-
 #view amount of people by race
 groups <- data %>% group_by(Race) %>% summarise(count = n())
 
