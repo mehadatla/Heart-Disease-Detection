@@ -4,7 +4,6 @@ library("stringr")
 library("janitor")
 
 getwd()
-setwd("/Users/shriya/Desktop/data_mining")
 data <- read.csv("heart_2020_cleaned.csv")
 
 #view amount of people by race
