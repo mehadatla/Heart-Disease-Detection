@@ -5,7 +5,7 @@ library("janitor")
 library(caret)
 
 getwd()
-setwd("/Users/shriya/Desktop/data_mining")
+setwd("/Users/shriya/Desktop/heartfailure")
 data <- read.csv("heart_2020_cleaned.csv")
 
 #view amount of people by race
@@ -57,7 +57,8 @@ summary(model1)
 model2 <- glm(HeartDisease ~ Smoking + AlcoholDrinking + Stroke + Asthma, data = train, family = binomial())
 summary(model2)
 
-fit_model <- model2
+fit_model <- model1
+
 test$y_pred<- predict(fit_model, test, type = "response")
 test$y_pred <-ifelse(test$y_pred>0.5, 1, 0)
 test$y_pred <- as.factor(test$y_pred)
