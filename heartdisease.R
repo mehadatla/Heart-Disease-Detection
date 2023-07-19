@@ -88,18 +88,41 @@ test_y <- unlist(test_y)
 train_y <- unlist(train_y)
 
 #train model
-rfm1 <- randomForest(x = train_x, y = train_y, xtest = test_x, ytest = test_y, importance = TRUE, ntree = 2)
+rfm1 <- randomForest(x = train_x, y = train_y, xtest = test_x, ytest = test_y, importance = TRUE, ntree = 500)
 
 # find the best value for the mtry hyperparameter. Set the x, y, xtest, ytest as before. Set the ntreeTry value to 500 (it will build 500 trees per try), stepFactor to 1.5, improve = 0.01, trace = TRUE, and plot = TRUE 
 
-mtry <- tuneRF(x = train_x, y = train_y, xtest = test_x, ytest = test_y, ntreeTry = 500, stepFactor = 1.5, improve = 0.01, trace = TRUE, plot = TRUE)
+mtry <- tuneRF(x = train_x, y = train_y, xtest = test_x, ytest = test_y, ntreeTry = 300, stepFactor = 1.5, improve = 0.01, trace = TRUE, plot = TRUE)
 
 # The code below will save the best value for the mtry and print it out
 best.m <- mtry[mtry[, 2] == min(mtry[, 2]), 1]
 print(mtry)
 print(best.m)
 
+#tune number of trees
+rf_res_df <-
+  data.frame(
+    TRAINING_ERROR = rfm1$err.rate[,1],
+    ITERATION = c(1:500)
+  ) %>%
+  mutate(MIN = TRAINING_ERROR == min(TRAINING_ERROR))
 
+best_nrounds <- rf_res_df %>%
+  filter(MIN) %>%
+  pull(ITERATION)
+
+print(best_nrounds)
+
+#model
+rf_final_model <-
+  randomForest(
+    x = train_x,
+    y = train_y,
+    mtry = 2,
+    importance = TRUE,
+    ntree = 2
+  )
+rf_final_model
 
 
 # #split into train and test logreg
