@@ -125,31 +125,3 @@ rf_final_model <-
 rf_final_model
 
 
-# #split into train and test logreg
-# train <- data %>% dplyr::sample_frac(0.80)
-# test  <- dplyr::anti_join(data, train, by = 'rownum')
-# 
-# #fit
-# model1 <-
-#   glm(
-#     HeartDisease ~ Smoking + PhysicalHealth + AlcoholDrinking + GenHealth + KidneyDisease + SleepTime + Stroke + Diabetic + PhysicalActivity + AgeCategory + DiffWalking,
-#     data = train,
-#     family = binomial()
-#   )
-# summary(model1)
-# 
-# model2 <-
-#   glm(
-#     HeartDisease ~ Smoking + AlcoholDrinking + Stroke + Asthma,
-#     data = train,
-#     family = binomial()
-#   )
-# summary(model2)
-# 
-# fit_model <- model1
-# 
-# test$y_pred <- predict(fit_model, test, type = "response")
-# test$y_pred <- ifelse(test$y_pred > 0.5, 1, 0)
-# test$y_pred <- as.factor(test$y_pred) # make sure levels are no = 0 and 1 = yes
-# 
-# confusionMatrix(test$HeartDisease, test$y_pred)
