@@ -3,6 +3,9 @@ library("tidyverse")
 library("stringr")
 library("janitor")
 library(caret)
+library(RColorBrewer)
+library(RColor)
+library(ggplot2)
 
 getwd()
 setwd("/Users/shriya/Desktop/heartfailure")
@@ -10,8 +13,20 @@ data <- read.csv("heart_2020_cleaned.csv")
 
 #view amount of people by race
 groups <- data %>% group_by(Race) %>% summarise(count = n())
+# calculate total people with heart disease per race
+heart_disease_counts <- aggregate(HeartDisease ~ Race, data = data, FUN = function(x) sum(x == "Yes"))
+# merge with the groups dataframe
+groups <- merge(groups, heart_disease_counts, by = "Race", all.x = TRUE)
+#calculate percentage
+groups$percentdisease <- groups$HeartDisease / groups$count  # Division operation
+groups$percentdisease <- groups$percentdisease*100
 
-#data$HeartDisease <- ifelse(data$HeartDisease == "Yes", 1, 0)
+#BAR GRAPH
+ggplot(groups, aes(x = Race, y = percentdisease, group = Race, fill = Race)) +
+  geom_bar(stat = "identity") +
+  labs(x = "Race", y = "Percentage of People with Heart Disease") +
+  ggtitle("Percentage of People with Heart Disease by Race") +
+  theme_minimal() + scale_fill_brewer(palette = "Set2")   #+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 #exploratory analysis with ggplot
 ggplot(data, aes(
