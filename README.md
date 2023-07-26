@@ -12,13 +12,13 @@ The Random Forests model used the following factors: Sex, Age, Skin Cancer, Kidn
 ---
 ## Project Structure: 
 
-    #view amount of people by race
+#view amount of people by race
     groups <- data %>% group_by(Race) %>% summarise(count = n())
-    # calculate total people with heart disease per race
+#calculate total people with heart disease per race
     heart_disease_counts <- aggregate(HeartDisease ~ Race, data = data, FUN = function(x) sum(x == "Yes"))
-    # merge with the groups dataframe
+ #merge with the groups dataframe
     groups <- merge(groups, heart_disease_counts, by = "Race", all.x = TRUE)
-    #calculate percentage
+ #calculate percentage
     groups$percentdisease <- groups$HeartDisease / groups$count  # Division operation
     groups$percentdisease <- groups$percentdisease*100
 
