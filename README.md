@@ -75,7 +75,7 @@ With an accuracy score of 91.55% we were able to conclude that the factors that 
 ---
 ##### Our original data set allowed us to conclude that certain races have more access to screening facilities, as their race is more represented in the dataset. We hope to use our model to provide accessible screening for those without healthcare facilities. This specifically includes BIPOC      communities, which face much higher death rates from heart disease than other races and don't have access to healthcare resources. In the future, we hope to build our model to consider more factors that affect heart disease and further enhance the accuracy of our model. 
 ---
-![Heart_Disease_Poster](https://github.com/mehadatla/Heart-Disease-Detection/assets/137425663/af252b51-c9c0-4c2a-95ca-cd127cf27bf4)
+![Heart_Disease_Poster](https://github.com/mehadatla/Heart-Disease-Detection/assets/137425663/f912a995-b910-4792-8bef-817c505dc216)
 
 
 
