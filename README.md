@@ -1,6 +1,6 @@
 # Heart Disease
 
-![]([Percent With Heart Disease by Race (bar graph).png](https://github.com/mehadatla/Heart-Disease-Detection/assets/137425663/c136ab07-1cd1-4adc-998a-b54d8c50dadd)
+![](https://github.com/mehadatla/Heart-Disease-Detection/assets/137425663/c136ab07-1cd1-4adc-998a-b54d8c50dadd)
 
 ## Abstract
 Heart Disease refers to numerous conditions and is considered to be the leading cause of death in America. In order to prevent such fatalities, it's important to take certain preventative measures, such as screening. Screening for Heart Disease often involves the use of an Electrocardiogram (ECG) which measures the heart's electrical activity. However, this process can cost the average American up to $3000, making it highly unattainable for certain individuals. Additionally, the mortality rate for heart disease is significantly higher in Black Indigenous People of Color (BIPOC), as certain communities don't have access to preventative methods. Using AI, we were able to build a Random Forests model that analyzes common indicators of heart disease to predict the likelihood of having it. 
