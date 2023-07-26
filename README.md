@@ -1,6 +1,6 @@
 # Heart Disease
 
-![pic](https://github.com/mehadatla/Heart-Disease-Detection/assets/137425690/7fa2a85c-3de2-4852-98e3-3ea63f425d1f)
+![](Percent With Heart Disease by Race (bar graph).png)
 
 ## Abstract
 
