@@ -13,30 +13,32 @@ The Random Forests model used the following factors: Sex, Age, Skin Cancer, Kidn
 ## Project Structure: 
 
 ### 1) Exploratory Data Analysis 
-- In order to prevent bias within our model we assessed the distribution of racial groups within our data set 
+In order to prevent bias within our model we assessed the distribution of racial groups within our data set 
     
     groups <- data %>% group_by(Race) %>% summarise(count = n())
-#Calculate total number of people with heart disease per race
+Calculate total number of people with heart disease per race
    
     heart_disease_counts <- aggregate(HeartDisease ~ Race, data = data, FUN = function(x) sum(x == "Yes"))
-#Merge with the group data frame
+Merge with the group data frame
     
     groups <- merge(groups, heart_disease_counts, by = "Race", all.x = TRUE)
-#Calculate the percentages
+Calculate the percentages
    
     groups$percentdisease <- groups$HeartDisease / groups$count  # Division operation
     groups$percentdisease <- groups$percentdisease*100
 
 ### 2) Splitting the Data
-- By separating the data we were able to test it using existing data and train with new data to further enhance its accuracy
+By separating the data we were able to test it using existing data and train with new data to further enhance its accuracy
+
     train <- data %>% dplyr::sample_frac(0.80)
     test  <- dplyr::anti_join(data, train, by = 'rownum')
+Create dataset with only the features
 
-#Create dataset with only the features
     train_x <- train %>% select(-HeartDisease)
     test_x <- test %>% select(-HeartDisease)
 
-#Create dataset with only yes/no from heart disease column
+Create dataset with only yes/no from heart disease column
+
     train_y <- train %>% select(HeartDisease)
     test_y <- test %>% select(HeartDisease)
 
