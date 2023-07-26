@@ -10,7 +10,7 @@ The Random Forests model used the following factors: Sex, Age, Skin Cancer, Kidn
 **put factors graph here
 
 ---
-## Project Structure: 
+## Project Structure/Methodology: 
 
 ### 1) Exploratory Data Analysis 
 In order to prevent bias within our model we assessed the distribution of racial groups within our data set 
@@ -52,13 +52,29 @@ Our final model
 Making Predictions
     
     test$y_pred<- predict(rf_final_model, test)
-
-
-
-## Possibilities: 
-
 ---
-## Methodology: 
+## Results and Possibilities: 
+With an accuracy score of 91.55% we were able to conclude that the factors that most likely cause heart disease include: 
+1. Sex
+2. Age
+3. Skin Cancer
+4. Kidney Disease
+5. Stroke
+6. Physical Health
+7. Diabetes
+8. General Health
+9. Difficulty Walking
+10. Smoking
+11. BMI
+12. Mental Health
+13. Race
+14. Asthma
+15. Physical Activity
+16. Alcohol Drinking
+17. Sleep Time
+
+Our original data set allowed us to conclude that certain races have more access to screening facilities, as their race is more represented in the dataset. We hope to use our model to provide accessible screening for those without healthcare facilities. This specifically includes BIPOC  communities, which face much higher death rates from heart disease than other races and don't have access to healthcare resources. In the future, we hope to build our model to consider more factors that affect heart disease and further enhance accuracy of our model. 
 ---
+
 
 
