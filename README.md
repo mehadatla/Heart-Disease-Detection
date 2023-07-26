@@ -7,7 +7,7 @@ Heart Disease refers to numerous conditions and is considered to be the leading 
 
 The Random Forests model used the following factors: Sex, Age, Skin Cancer, Kidney Disease, Stroke, Physical Health, Diabetes, General Health, Difficulty Walking, Smoking, BMI, Mental Health, Race, Asthma, Physical Activity, Alcohol Drinking, and Sleep Time. These factors had a strong correlation with instances of heart disease for the patients within the data set. Furthermore, these factors allowed us to gain insight into the extent to which the factors are associated with heart disease. Using the most prominent factors, we were able to train a Random Forests model with an accuracy of 91.55%.  We hope that this model can serve as a basis to alert people of heart disease and act as a tool for those who don't have access to professional screening. 
 
-**put factors graph here
+![Feature Importance](https://github.com/mehadatla/Heart-Disease-Detection/assets/137425663/e0258fd2-44ce-4818-9ab8-8e960ab77340)
 
 ---
 ## Project Structure/Methodology: 
