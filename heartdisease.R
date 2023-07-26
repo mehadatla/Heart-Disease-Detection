@@ -94,9 +94,11 @@ library(randomForest)
 train <- data %>% dplyr::sample_frac(0.80)
 test  <- dplyr::anti_join(data, train, by = 'rownum')
 
+#create dataset with only the features
 train_x <- train %>% select(-HeartDisease)
 test_x <- test %>% select(-HeartDisease)
 
+#create dataset with only yes/no from heart disease column
 train_y <- train %>% select(HeartDisease)
 test_y <- test %>% select(HeartDisease)
 
@@ -205,5 +207,11 @@ ggplot(groups, aes(x = Race, y = percentk, group = Race, fill = Race)) +
   geom_bar(stat = "identity") +
   labs(x = "Race", y = "Percentage of People with Kidney Disease") +
   ggtitle("Percentage of People with Kidney Disease by Race") +
-  theme_minimal() + scale_fill_brewer(palette = "Set2")   #+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
+  theme_minimal() + theme(
+    # Increase the font size of the title
+    plot.title = element_text(size = 16),
+    # Increase the font size of axis labels
+    axis.title.x = element_text(size = 16),
+    axis.title.y = element_text(size = 16), axis.text.x = element_text(size = 15)) +
+  scale_fill_brewer(palette = "Set2") + labs(x=expression('American Indians/Alaskan'[Natives])   #+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
