@@ -12,7 +12,7 @@ The Random Forests model used the following factors: Sex, Age, Skin Cancer, Kidn
 ---
 ## Project Structure: 
 
-  print(her)
+    print(her)
 
 ---
 ## Possibilities: 
