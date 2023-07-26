@@ -1,6 +1,6 @@
 # Heart Disease
 
-![](Percent With Heart Disease by Race (bar graph).png)
+![]("Percent With Heart Disease by Race (bar graph).png")
 
 ## Abstract
 
