@@ -12,7 +12,8 @@ The Random Forests model used the following factors: Sex, Age, Skin Cancer, Kidn
 ---
 ## Project Structure: 
 
-#view amount of people by race
+### 1) Exploratory Data Analysis 
+#In order to prevent bias within our model we assessed the distribution of racial groups within our data set (below is the code we used)
     
     groups <- data %>% group_by(Race) %>% summarise(count = n())
 #calculate total people with heart disease per race
