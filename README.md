@@ -42,6 +42,18 @@ Create dataset with only yes/no from heart disease column
     train_y <- train %>% select(HeartDisease)
     test_y <- test %>% select(HeartDisease)
 
+ ### 3) Random Forests
+We created a Random Forests Model that trained/tuned to increase model accuracy
+Our final model
+
+    rf_final_model <- randomForest(x = train_x, y = train_y, mtry = 2,importance = TRUE, ntree = 5)
+    rf_final_model
+
+Making Predictions
+    
+    test$y_pred<- predict(rf_final_model, test)
+
+
 
 ## Possibilities: 
 
